@@ -14,37 +14,39 @@ function PortfolioApp() {
   ];
 
   const scrollToSection = (sectionId) => {
-    document
-      .getElementById(sectionId)
-      .scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 50; // Adjust this based on your navbar height
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
     setActiveSection(sectionId);
-  };
+  };  
 
   useEffect(() => {
+    let timeout;
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-      sections.forEach((section) => {
-        const element = sectionRefs.current[section.id];
-        if (element) {
-          const { top, bottom } = element.getBoundingClientRect();
-          const elementTop = top + window.scrollY;
-          const elementBottom = bottom + window.scrollY;
-
-          if (
-            scrollPosition >= elementTop &&
-            scrollPosition < elementBottom
-          ) {
-            setActiveSection(section.id);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        sections.forEach((section) => {
+          const element = sectionRefs.current[section.id];
+          if (element) {
+            const { top, bottom } = element.getBoundingClientRect();
+            const elementTop = top + window.scrollY;
+            const elementBottom = bottom + window.scrollY;
+            if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+              setActiveSection(section.id);
+            }
           }
-        }
-      });
+        });
+      }, 100); // Delay scroll detection for smoother transitions
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [sections]);
-
+  
   return (
     <div className="portfolio-container">
       {/* Navigation */}
