@@ -27233,7 +27233,7 @@ function PortfolioApp() {
         },
         {
             id: 'experience',
-            title: "\uD83D\uDCBC PROFESSIONAL EXPERIENCE"
+            title: "\uD83D\uDCBC EXPERIENCE"
         },
         {
             id: 'projects',
@@ -27241,7 +27241,7 @@ function PortfolioApp() {
         },
         {
             id: 'publications',
-            title: "\uD83D\uDCDA PUBLICATIONS"
+            title: "\uD83D\uDCDA RESEARCH & PUBLICATIONS"
         },
         {
             id: 'certifications',
@@ -27253,14 +27253,20 @@ function PortfolioApp() {
         }
     ];
     const scrollToSection = (sectionId)=>{
-        document.getElementById(sectionId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 50; // Adjust this based on your navbar height
+            const top = element.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({
+                top,
+                behavior: "smooth"
+            });
+        }
         setActiveSection(sectionId);
     };
     (0, _react.useEffect)(()=>{
         const handleScroll = ()=>{
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            const scrollPosition = window.scrollY + window.innerHeight / 3; // Adjust sensitivity
             sections.forEach((section)=>{
                 const element = sectionRefs.current[section.id];
                 if (element) {
@@ -27271,8 +27277,8 @@ function PortfolioApp() {
                 }
             });
         };
-        window.addEventListener('scroll', handleScroll);
-        return ()=>window.removeEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return ()=>window.removeEventListener("scroll", handleScroll);
     }, [
         sections
     ]);
@@ -27307,14 +27313,14 @@ function PortfolioApp() {
                                 className: "section-divider"
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 71,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                                 children: "ABOUT ME"
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 72,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27325,8 +27331,22 @@ function PortfolioApp() {
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                             className: "about-image",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                                src: "https://maxm-imggenurl.web.val.run/professional-headshot",
+                                                src: "/my_image.jpg",
                                                 alt: "Profile"
+                                            }, void 0, false, {
+                                                fileName: "src/components/PortfolioApp.jsx",
+                                                lineNumber: 73,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 72,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "about-text",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                children: "A passionate professional with a diverse skill set and a drive for innovation. My journey is defined by continuous learning, creative problem-solving, and a commitment to excellence."
                                             }, void 0, false, {
                                                 fileName: "src/components/PortfolioApp.jsx",
                                                 lineNumber: 76,
@@ -27336,36 +27356,22 @@ function PortfolioApp() {
                                             fileName: "src/components/PortfolioApp.jsx",
                                             lineNumber: 75,
                                             columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "about-text",
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                children: "A passionate professional with a diverse skill set and a drive for innovation. My journey is defined by continuous learning, creative problem-solving, and a commitment to excellence."
-                                            }, void 0, false, {
-                                                fileName: "src/components/PortfolioApp.jsx",
-                                                lineNumber: 82,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "src/components/PortfolioApp.jsx",
-                                            lineNumber: 81,
-                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PortfolioApp.jsx",
-                                    lineNumber: 74,
+                                    lineNumber: 71,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 73,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/PortfolioApp.jsx",
-                        lineNumber: 66,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
@@ -27377,14 +27383,14 @@ function PortfolioApp() {
                                 className: "section-divider"
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 98,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                children: "PROFESSIONAL EXPERIENCE"
+                                children: "EXPERIENCE"
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 99,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27399,20 +27405,20 @@ function PortfolioApp() {
                                                     children: "Senior Software Engineer"
                                                 }, void 0, false, {
                                                     fileName: "src/components/PortfolioApp.jsx",
-                                                    lineNumber: 103,
+                                                    lineNumber: 89,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                                     children: "Tech Innovations Inc. | 2020 - Present"
                                                 }, void 0, false, {
                                                     fileName: "src/components/PortfolioApp.jsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 90,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/PortfolioApp.jsx",
-                                            lineNumber: 102,
+                                            lineNumber: 88,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27424,7 +27430,7 @@ function PortfolioApp() {
                                                     className: "experience-image"
                                                 }, void 0, false, {
                                                     fileName: "src/components/PortfolioApp.jsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 93,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -27433,57 +27439,282 @@ function PortfolioApp() {
                                                             children: "Led cross-functional teams in developing scalable web applications"
                                                         }, void 0, false, {
                                                             fileName: "src/components/PortfolioApp.jsx",
-                                                            lineNumber: 113,
+                                                            lineNumber: 95,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                                             children: "Implemented cutting-edge technologies to optimize performance"
                                                         }, void 0, false, {
                                                             fileName: "src/components/PortfolioApp.jsx",
-                                                            lineNumber: 114,
+                                                            lineNumber: 96,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                                             children: "Designed and maintained complex software architectures"
                                                         }, void 0, false, {
                                                             fileName: "src/components/PortfolioApp.jsx",
-                                                            lineNumber: 115,
+                                                            lineNumber: 97,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                                             children: "Mentored junior developers and conducted code reviews"
                                                         }, void 0, false, {
                                                             fileName: "src/components/PortfolioApp.jsx",
-                                                            lineNumber: 116,
+                                                            lineNumber: 98,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/PortfolioApp.jsx",
-                                                    lineNumber: 112,
+                                                    lineNumber: 94,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/PortfolioApp.jsx",
-                                            lineNumber: 106,
+                                            lineNumber: 92,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/PortfolioApp.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/PortfolioApp.jsx",
-                                lineNumber: 100,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/PortfolioApp.jsx",
-                        lineNumber: 93,
+                        lineNumber: 83,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                        id: "projects",
+                        className: "section projects",
+                        ref: (el)=>sectionRefs.current['projects'] = el,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "section-divider"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 107,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "PROJECTS"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 108,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "projects-container",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "project-card",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                            children: "Project Title"
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 111,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: "Short description of your project..."
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 112,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/PortfolioApp.jsx",
+                                    lineNumber: 110,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 109,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/PortfolioApp.jsx",
+                        lineNumber: 106,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                        id: "publications",
+                        className: "section publications",
+                        ref: (el)=>sectionRefs.current['publications'] = el,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "section-divider"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 119,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "RESEARCH & PUBLICATIONS"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 120,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "publications-container",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "publication-card",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                            children: "Publication Title"
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 123,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: "Short description of your publication..."
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 124,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/PortfolioApp.jsx",
+                                    lineNumber: 122,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 121,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/PortfolioApp.jsx",
+                        lineNumber: 118,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                        id: "certifications",
+                        className: "section certifications",
+                        ref: (el)=>sectionRefs.current['certifications'] = el,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "section-divider"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 131,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "CERTIFICATIONS"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 132,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "certifications-container",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "certification-card",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                            children: "Certification Name"
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 135,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: "Details about the certification..."
+                                        }, void 0, false, {
+                                            fileName: "src/components/PortfolioApp.jsx",
+                                            lineNumber: 136,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/PortfolioApp.jsx",
+                                    lineNumber: 134,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 133,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/PortfolioApp.jsx",
+                        lineNumber: 130,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                        id: "contact",
+                        className: "section contact",
+                        ref: (el)=>sectionRefs.current['contact'] = el,
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "section-divider"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 143,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                children: "CONTACT"
+                            }, void 0, false, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 144,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "contact-container",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "Email: your-email@example.com"
+                                    }, void 0, false, {
+                                        fileName: "src/components/PortfolioApp.jsx",
+                                        lineNumber: 146,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: [
+                                            "LinkedIn: ",
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                href: "https://linkedin.com/in/yourprofile",
+                                                target: "_blank",
+                                                rel: "noopener noreferrer",
+                                                children: "Your LinkedIn"
+                                            }, void 0, false, {
+                                                fileName: "src/components/PortfolioApp.jsx",
+                                                lineNumber: 147,
+                                                columnNumber: 26
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/PortfolioApp.jsx",
+                                        lineNumber: 147,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/PortfolioApp.jsx",
+                                lineNumber: 145,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/PortfolioApp.jsx",
+                        lineNumber: 142,
                         columnNumber: 9
                     }, this)
                 ]
